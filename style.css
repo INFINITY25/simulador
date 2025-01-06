@@ -1,0 +1,237 @@
+/* Estilo General del Header */
+header {
+    background-color: #343a40; /* Fondo oscuro */
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra debajo */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Menú de Navegación */
+.navbar-menu {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #007bff; /* Azul de Bootstrap */
+}
+
+/* Botón */
+.btn-cta {
+    background-color: #007bff; /* Azul de Bootstrap */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+    }
+
+    .navbar-logo {
+        flex-grow: 1; /* Centrar el logo */
+    }
+
+    .btn-cta {
+        font-size: 0.8rem;
+    }
+}
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #343a40; /* Fondo oscuro */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Sidebar oculto */
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+/* Header del Sidebar */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Botón de cierre o toggler */
+.sidebar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Menú del Sidebar */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu li a:hover {
+    color: #007bff; /* Azul Bootstrap */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar-menu li a {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Contenedor Principal */
+.main-content {
+    margin-left: 250px; /* Espacio para el sidebar */
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro */
+    min-height: 100vh; /* Altura mínima */
+    color: #343a40; /* Texto oscuro */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Ajuste cuando el sidebar está oculto */
+.sidebar.hidden + .main-content {
+    margin-left: 0;
+}
+
+/* Contenido */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Títulos */
+.main-content h1 {
+    font-size: 2.5rem;
+    color: #007bff; /* Azul Bootstrap */
+    margin-bottom: 20px;
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Servicios */
+.services-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.service {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0; /* Sidebar oculto automáticamente */
+    }
+
+    .services-grid {
+        flex-direction: column;
+    }
+}
